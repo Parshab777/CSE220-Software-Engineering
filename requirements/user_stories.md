@@ -28,6 +28,7 @@ Library Management System — full backlog as tracked on the Trello board (`Back
 
 Each story above should be entered as a Trello card with:
 - **Description:** the user story text
+- **Acceptance Criteria:** What conditions must be met for us to say the story is successfully completed?
 - **Label:** priority (Red = High, Yellow = Medium, Green = Low)
 - **Custom field / checklist item:** story points
 - **Due date:** matching the story's sprint
