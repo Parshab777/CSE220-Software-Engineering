@@ -1,0 +1,231 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="P9FvewHmJWT293A-LmbO">
+    <mxGraphModel dx="747" dy="586" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" plantUmlData="{&#xa;  &quot;data&quot;: &quot;\n@startuml SequenceDiagram\ntitle Sequence Diagram - Borrow Book\n\nactor Member\nparticipant \&quot;UI / Web App\&quot; as UI\nparticipant \&quot;LibraryController\&quot; as Ctrl\nparticipant \&quot;Catalog\&quot; as Cat\ndatabase \&quot;Database\&quot; as DB\n\nMember -&gt; UI : searchBook(query)\nUI -&gt; Ctrl : search(query)\nCtrl -&gt; Cat : findByTitle(query)\nCat --&gt; Ctrl : return matching books\nCtrl --&gt; UI : return results\nUI --&gt; Member : display results\n\nMember -&gt; UI : selectBook &amp; borrow()\nUI -&gt; Ctrl : borrowBook(memberId, copyId)\nCtrl -&gt; Ctrl : checkFines(memberId)\nCtrl -&gt; Cat : updateCopyStatus(&#39;On Loan&#39;)\nCtrl -&gt; DB : createLoan(loan)\nDB --&gt; Ctrl : loan record saved\nCtrl --&gt; UI : return loan confirmation\nUI --&gt; Member : show due date / receipt\n@enduml&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="A4nw-ZAj1Me4aulekQTM-483">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
+            <mxGeometry as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="life_0" plantUmlBaseStyle="endArrow=none;html=1;strokeColor=#181818;strokeWidth=0.5;dashed=1;dashPattern=5 5;" plantUmlBaseValue="" id="A4nw-ZAj1Me4aulekQTM-484">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" style="endArrow=none;html=1;strokeColor=#181818;strokeWidth=0.5;dashed=1;dashPattern=5 5;rounded=0;">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="42" y="126" as="sourcePoint" />
+              <mxPoint x="42" y="615" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="UI / Web App" plantUmlId="p_1" plantUmlBaseStyle="shape=umlLifeline;perimeter=lifelinePerimeter;size=57;lifelineMirror=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;rounded=1;absoluteArcSize=1;arcSize=5;fillColor=#E2E2F0;strokeColor=#181818;strokeWidth=0.5;fontColor=#000000;fontSize=14;whiteSpace=wrap;html=1;" plantUmlBaseValue="UI / Web App" id="A4nw-ZAj1Me4aulekQTM-485">
+          <mxCell parent="A4nw-ZAj1Me4aulekQTM-483" style="shape=umlLifeline;perimeter=lifelinePerimeter;size=57;lifelineMirror=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;rounded=1;absoluteArcSize=1;arcSize=5;fillColor=#E2E2F0;strokeColor=#181818;strokeWidth=0.5;fontColor=#000000;fontSize=14;whiteSpace=wrap;html=1;" vertex="1">
+            <mxGeometry height="602" width="97.1" x="161.9142857142857" y="69" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="LibraryController" plantUmlId="p_2" plantUmlBaseStyle="shape=umlLifeline;perimeter=lifelinePerimeter;size=57;lifelineMirror=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;rounded=1;absoluteArcSize=1;arcSize=5;fillColor=#E2E2F0;strokeColor=#181818;strokeWidth=0.5;fontColor=#000000;fontSize=14;whiteSpace=wrap;html=1;" plantUmlBaseValue="LibraryController" id="A4nw-ZAj1Me4aulekQTM-486">
+          <mxCell parent="A4nw-ZAj1Me4aulekQTM-483" style="shape=umlLifeline;perimeter=lifelinePerimeter;size=57;lifelineMirror=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;rounded=1;absoluteArcSize=1;arcSize=5;fillColor=#E2E2F0;strokeColor=#181818;strokeWidth=0.5;fontColor=#000000;fontSize=14;whiteSpace=wrap;html=1;" vertex="1">
+            <mxGeometry height="602" width="117.8" x="360.14285714285717" y="69" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Catalog" plantUmlId="p_3" plantUmlBaseStyle="shape=umlLifeline;perimeter=lifelinePerimeter;size=57;lifelineMirror=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;rounded=1;absoluteArcSize=1;arcSize=5;fillColor=#E2E2F0;strokeColor=#181818;strokeWidth=0.5;fontColor=#000000;fontSize=14;whiteSpace=wrap;html=1;" plantUmlBaseValue="Catalog" id="A4nw-ZAj1Me4aulekQTM-487">
+          <mxCell parent="A4nw-ZAj1Me4aulekQTM-483" style="shape=umlLifeline;perimeter=lifelinePerimeter;size=57;lifelineMirror=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;rounded=1;absoluteArcSize=1;arcSize=5;fillColor=#E2E2F0;strokeColor=#181818;strokeWidth=0.5;fontColor=#000000;fontSize=14;whiteSpace=wrap;html=1;" vertex="1">
+            <mxGeometry height="602" width="61.4" x="582.1571428571428" y="69" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="life_4" plantUmlBaseStyle="endArrow=none;html=1;strokeColor=#181818;strokeWidth=0.5;dashed=1;dashPattern=5 5;" plantUmlBaseValue="" id="A4nw-ZAj1Me4aulekQTM-488">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" style="endArrow=none;html=1;strokeColor=#181818;strokeWidth=0.5;dashed=1;dashPattern=5 5;rounded=0;">
+            <mxGeometry relative="1" as="geometry">
+              <mxPoint x="682.9571428571429" y="126" as="sourcePoint" />
+              <mxPoint x="682.9571428571429" y="615" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="searchBook(query)" plantUmlId="msg_5" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;" plantUmlBaseValue="searchBook(query)" id="A4nw-ZAj1Me4aulekQTM-489">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" style="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;" target="A4nw-ZAj1Me4aulekQTM-485">
+            <mxGeometry relative="1" x="-0.265" as="geometry">
+              <Array as="points">
+                <mxPoint x="126.5" y="161" />
+              </Array>
+              <mxPoint x="42" y="161" as="sourcePoint" />
+              <mxPoint x="210.46428571428572" y="161" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="search(query)" plantUmlId="msg_6" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;" plantUmlBaseValue="search(query)" id="A4nw-ZAj1Me4aulekQTM-490">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" source="A4nw-ZAj1Me4aulekQTM-485" style="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;" target="A4nw-ZAj1Me4aulekQTM-486">
+            <mxGeometry relative="1" x="-0.546" as="geometry">
+              <Array as="points">
+                <mxPoint x="314.5" y="193" />
+              </Array>
+              <mxPoint x="210.46428571428572" y="193" as="sourcePoint" />
+              <mxPoint x="419.04285714285714" y="193" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="findByTitle(query)" plantUmlId="msg_7" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;" plantUmlBaseValue="findByTitle(query)" id="A4nw-ZAj1Me4aulekQTM-491">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" source="A4nw-ZAj1Me4aulekQTM-486" style="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;" target="A4nw-ZAj1Me4aulekQTM-487">
+            <mxGeometry relative="1" x="-0.393" as="geometry">
+              <Array as="points">
+                <mxPoint x="515.5" y="225" />
+              </Array>
+              <mxPoint x="419.04285714285714" y="225" as="sourcePoint" />
+              <mxPoint x="612.8571428571429" y="225" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="return matching books" plantUmlId="msg_8" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;" plantUmlBaseValue="return matching books" id="A4nw-ZAj1Me4aulekQTM-492">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" source="A4nw-ZAj1Me4aulekQTM-487" style="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;" target="A4nw-ZAj1Me4aulekQTM-486">
+            <mxGeometry relative="1" x="0.142" as="geometry">
+              <Array as="points">
+                <mxPoint x="515.5" y="257" />
+              </Array>
+              <mxPoint x="612.8571428571429" y="257" as="sourcePoint" />
+              <mxPoint x="419.04285714285714" y="257" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="return results" plantUmlId="msg_9" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;" plantUmlBaseValue="return results" id="A4nw-ZAj1Me4aulekQTM-493">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" source="A4nw-ZAj1Me4aulekQTM-486" style="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;" target="A4nw-ZAj1Me4aulekQTM-485">
+            <mxGeometry relative="1" x="0.463" as="geometry">
+              <Array as="points">
+                <mxPoint x="314.5" y="289" />
+              </Array>
+              <mxPoint x="419.04285714285714" y="289" as="sourcePoint" />
+              <mxPoint x="210.46428571428572" y="289" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="display results" plantUmlId="msg_10" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;" plantUmlBaseValue="display results" id="A4nw-ZAj1Me4aulekQTM-494">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" source="A4nw-ZAj1Me4aulekQTM-485" style="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;">
+            <mxGeometry relative="1" x="0.272" as="geometry">
+              <Array as="points">
+                <mxPoint x="126.5" y="321" />
+              </Array>
+              <mxPoint x="210.46428571428572" y="321" as="sourcePoint" />
+              <mxPoint x="42" y="321" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="selectBook &amp;amp; borrow()" plantUmlId="msg_11" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;" plantUmlBaseValue="selectBook &amp;amp; borrow()" id="A4nw-ZAj1Me4aulekQTM-495">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" style="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;" target="A4nw-ZAj1Me4aulekQTM-485">
+            <mxGeometry relative="1" x="-0.151" as="geometry">
+              <Array as="points">
+                <mxPoint x="126.5" y="353" />
+              </Array>
+              <mxPoint x="42" y="353" as="sourcePoint" />
+              <mxPoint x="210.46428571428572" y="353" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="borrowBook(memberId, copyId)" plantUmlId="msg_12" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;" plantUmlBaseValue="borrowBook(memberId, copyId)" id="A4nw-ZAj1Me4aulekQTM-496">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" source="A4nw-ZAj1Me4aulekQTM-485" style="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;" target="A4nw-ZAj1Me4aulekQTM-486">
+            <mxGeometry relative="1" x="-0.053" as="geometry">
+              <Array as="points">
+                <mxPoint x="314.5" y="385" />
+              </Array>
+              <mxPoint x="210.46428571428572" y="385" as="sourcePoint" />
+              <mxPoint x="419.04285714285714" y="385" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" plantUmlId="msg_13" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;strokeColor=#181818;strokeWidth=1;exitX=0.5;exitY=0.578;exitDx=0;exitDy=0;" plantUmlBaseValue="" id="A4nw-ZAj1Me4aulekQTM-497">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" source="A4nw-ZAj1Me4aulekQTM-486" style="endArrow=classic;endFill=1;endSize=9;html=1;strokeColor=#181818;strokeWidth=1;exitX=0.5;exitY=0.578;exitDx=0;exitDy=0;rounded=0;">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="457.04285714285714" y="417" />
+                <mxPoint x="457.04285714285714" y="437" />
+              </Array>
+              <mxPoint x="419.04285714285714" y="417" as="sourcePoint" />
+              <mxPoint x="422.04285714285714" y="437" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="checkFines(memberId)" plantUmlId="msglbl_16" plantUmlBaseStyle="text;html=1;fontColor=#000000;fontSize=13;align=left;verticalAlign=middle;" plantUmlBaseValue="checkFines(memberId)" id="A4nw-ZAj1Me4aulekQTM-498">
+          <mxCell parent="A4nw-ZAj1Me4aulekQTM-483" style="text;html=1;fontColor=#000000;fontSize=13;align=left;verticalAlign=middle;" vertex="1">
+            <mxGeometry height="18" width="141.38571428571427" x="426.04285714285714" y="397" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="updateCopyStatus(&#39;On Loan&#39;)" plantUmlId="msg_17" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;" plantUmlBaseValue="updateCopyStatus(&#39;On Loan&#39;)" id="A4nw-ZAj1Me4aulekQTM-499">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" source="A4nw-ZAj1Me4aulekQTM-486" style="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;" target="A4nw-ZAj1Me4aulekQTM-487">
+            <mxGeometry relative="1" x="-0.057" as="geometry">
+              <Array as="points">
+                <mxPoint x="515.5" y="469" />
+              </Array>
+              <mxPoint x="419.04285714285714" y="469" as="sourcePoint" />
+              <mxPoint x="612.8571428571429" y="469" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="createLoan(loan)" plantUmlId="msg_18" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;" plantUmlBaseValue="createLoan(loan)" id="A4nw-ZAj1Me4aulekQTM-500">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" source="A4nw-ZAj1Me4aulekQTM-486" style="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;">
+            <mxGeometry relative="1" x="-0.571" as="geometry">
+              <Array as="points">
+                <mxPoint x="551.5" y="501" />
+              </Array>
+              <mxPoint x="419.04285714285714" y="501" as="sourcePoint" />
+              <mxPoint x="682.9571428571429" y="501" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="loan record saved" plantUmlId="msg_19" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;" plantUmlBaseValue="loan record saved" id="A4nw-ZAj1Me4aulekQTM-501">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" style="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;" target="A4nw-ZAj1Me4aulekQTM-486">
+            <mxGeometry relative="1" x="0.468" as="geometry">
+              <Array as="points">
+                <mxPoint x="551.5" y="533" />
+              </Array>
+              <mxPoint x="682.9571428571429" y="533" as="sourcePoint" />
+              <mxPoint x="419.04285714285714" y="533" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="return loan confirmation" plantUmlId="msg_20" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;" plantUmlBaseValue="return loan confirmation" id="A4nw-ZAj1Me4aulekQTM-502">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" source="A4nw-ZAj1Me4aulekQTM-486" style="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;" target="A4nw-ZAj1Me4aulekQTM-485">
+            <mxGeometry relative="1" x="0.163" as="geometry">
+              <Array as="points">
+                <mxPoint x="314.5" y="565" />
+              </Array>
+              <mxPoint x="419.04285714285714" y="565" as="sourcePoint" />
+              <mxPoint x="210.46428571428572" y="565" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="show due date / receipt" plantUmlId="msg_21" plantUmlBaseStyle="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;" plantUmlBaseValue="show due date / receipt" id="A4nw-ZAj1Me4aulekQTM-503">
+          <mxCell edge="1" parent="A4nw-ZAj1Me4aulekQTM-483" source="A4nw-ZAj1Me4aulekQTM-485" style="endArrow=classic;endFill=1;endSize=9;html=1;rounded=0;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;strokeColor=#181818;strokeWidth=1;fontColor=#000000;fontSize=13;verticalAlign=bottom;labelBackgroundColor=none;dashed=1;dashPattern=2 2;">
+            <mxGeometry relative="1" x="-0.053" as="geometry">
+              <Array as="points">
+                <mxPoint x="126.5" y="597" />
+              </Array>
+              <mxPoint x="210.46428571428572" y="597" as="sourcePoint" />
+              <mxPoint x="42" y="597" as="targetPoint" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="Member" plantUmlId="p_22" plantUmlBaseStyle="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;" plantUmlBaseValue="Member" id="A4nw-ZAj1Me4aulekQTM-504">
+          <mxCell parent="A4nw-ZAj1Me4aulekQTM-483" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;" vertex="1">
+            <mxGeometry height="38" width="24" x="30" y="69" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Member" plantUmlId="pf_23" plantUmlBaseStyle="shape=umlActor;verticalLabelPosition=top;verticalAlign=bottom;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;" plantUmlBaseValue="Member" id="A4nw-ZAj1Me4aulekQTM-505">
+          <mxCell parent="A4nw-ZAj1Me4aulekQTM-483" style="shape=umlActor;verticalLabelPosition=top;verticalAlign=bottom;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;" vertex="1">
+            <mxGeometry height="38" width="24" x="30" y="633" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Database" plantUmlId="p_24" plantUmlBaseStyle="shape=cylinder3;size=6;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;" plantUmlBaseValue="Database" id="A4nw-ZAj1Me4aulekQTM-506">
+          <mxCell parent="A4nw-ZAj1Me4aulekQTM-483" style="shape=cylinder3;size=6;verticalLabelPosition=bottom;verticalAlign=top;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;" vertex="1">
+            <mxGeometry height="34" width="36" x="664.9571428571429" y="73" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Database" plantUmlId="pf_25" plantUmlBaseStyle="shape=cylinder3;size=6;verticalLabelPosition=top;verticalAlign=bottom;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;" plantUmlBaseValue="Database" id="A4nw-ZAj1Me4aulekQTM-507">
+          <mxCell parent="A4nw-ZAj1Me4aulekQTM-483" style="shape=cylinder3;size=6;verticalLabelPosition=top;verticalAlign=bottom;fillColor=#E2E2F0;strokeColor=#181818;fontColor=#000000;fontSize=14;html=1;" vertex="1">
+            <mxGeometry height="34" width="36" x="664.9571428571429" y="633" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="Sequence Diagram - Borrow Book" plantUmlId="title_26" plantUmlBaseStyle="text;html=1;fillColor=none;strokeColor=none;fontSize=14;fontStyle=1;fontColor=#000000;align=center;verticalAlign=middle;" plantUmlBaseValue="Sequence Diagram - Borrow Book" id="A4nw-ZAj1Me4aulekQTM-508">
+          <mxCell parent="A4nw-ZAj1Me4aulekQTM-483" style="text;html=1;fillColor=none;strokeColor=none;fontSize=14;fontStyle=1;fontColor=#000000;align=center;verticalAlign=middle;" vertex="1">
+            <mxGeometry height="24" width="240.04000000000005" x="244.4085714285714" y="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
